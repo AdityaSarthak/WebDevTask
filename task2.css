@@ -136,39 +136,36 @@ color: #FFFFFF;
 }
 #nameplate1_text{
     position: absolute;
-    width: 150px;
-    height: 25.51px;
-    left: 945px;
-    top: 294.74px;
-
+    width: 155px;
+    height: 30px;
+    left: 5%;
+    top: 20%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
-    line-height: 29px;
+    line-height: 24px;
     color: #FFFFFF;
 }
 #nameplate1_dot{
     position: absolute;
-    width: 2.69px;
-    height: 2.69px;
-    left: 1100px;
-    top: 309px;
+    width: 2px;
+    height: 2px;
+    left: 75%;
+    top: 45%;
     background: #FFFFFF;
-    border-radius: 36px;
 }
 #nameplate1_points{
     position: absolute;
-    width: 51.03px;
-    height: 22.83px;
-    left: 1120px;
-    top: 297.43px;
+    width: 43px;
+    height: 19px;
+    left: 80%;
+    top: 20%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-
+    font-size: 25px;
+    line-height: 24px;
     color: #FFFFFF;
 }
 #nameplate2{
@@ -184,8 +181,8 @@ color: #FFFFFF;
     position: absolute;
     width: 155px;
     height: 30px;
-    left: 345px;
-    top: 304px;
+    left: 5%;
+    top: 10%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -197,16 +194,16 @@ color: #FFFFFF;
     position: absolute;
     width: 2px;
     height: 2px;
-    left: 469px;
-    top: 315px;
+    left: 75%;
+    top: 45%;
     background: #FFFFFF;
 }
 #nameplate2_points{
     position: absolute;
     width: 43px;
     height: 19px;
-    left: 477px;
-    top: 305px;
+    left: 80%;
+    top: 10%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -226,9 +223,9 @@ color: #FFFFFF;
 #nameplate3_text{
     position: absolute;
     width: 155px;
-    height: 19px;
-    left: 1575px;
-    top: 303px;
+    height: 30px;
+    left: 5%;
+    top: 10%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -240,16 +237,16 @@ color: #FFFFFF;
     position: absolute;
     width: 2px;
     height: 2px;
-    left: 1690px;
-    top: 313px;
+    left: 75%;
+    top: 45%;
     background: #FFFFFF;
 }
 #nameplate3_points{
     position: absolute;
-    width: 38px;
-    height: 17px;
-    left: 1697px;
-    top: 305px;
+    width: 43px;
+    height: 19px;
+    left: 80%;
+    top: 10%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -258,11 +255,124 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 #standings1{
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100px;
-    top: 420px;
     background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 425px;
+}
+.standings{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 880px;
+}
+.num{
+    position: relative;
+    left:0.5%;
+    top: 40%;
+    width:32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1E1E1E;
+    display: flex;;
+    height: 36px;
+    align-items: center;
+
+}
+.avatar{
+    position: relative;
+    width: 74.42px;
+    height: 74.42px;
+    top: 15%;
+    left:3%;
+    background: #BABEFF;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.avatar img{
+    width:74.42px;
+    height:74.42px;
+    border-radius: 100%;
+}
+.name{
+    position: relative;
+    width: 200px;
+    left:4%;
+    top: 35%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1E1E1E;
+    display: flex;;
+    height: 36px;
+    align-items: center;
+}
+.points{
+    position: relative;
+    left:80%;
+    top: 40%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #1E1E1E;
+    display: flex;;
+    height: 36px;
+    align-items: center;
+}
+#standings2{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 450px;
+}
+#standings3{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 450px;
+}
+#standings4{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 450px;
+}
+#standings5{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #D2D4F2;
+    display: flex;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    top: 450px;
 }
 #stand_number1{
     position: absolute;
@@ -581,73 +691,6 @@ width: 227px;
 height: 36px;
 left: 85%;
 top: 906px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-
-color: #000000;
-
-}
-#standings6{
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    top: 990px;
-    background: #D2D4F2;
-}
-#stand_number6{
-    position: absolute;
-    width: 23px;
-    height: 36px;
-    left: 40px;
-    top: 1035px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 39px;
-    color: #1E1E1E;
-}
-#avatar6{
-    position: absolute;
-    width: 74.42px;
-    height: 74.42px;
-    left: 127.79px;
-    top: 1002.79px;
-    background: #BABEFF;
-    border: 2px solid white;
-    border-radius: 100%;
-}
-#avatar6 img{
-    width:74.42px;
-    height:74.42px;
-    border-radius: 100%;
-}
-
-#name6{
-    position: absolute;
-width: 280px;
-height: 36px;
-left: 255px;
-top: 1035px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-
-color: #1E1E1E;
-}
-#score6{
-    position: absolute;
-width: 227px;
-height: 36px;
-left: 85%;
-top: 1019px;
 
 font-family: 'Inter';
 font-style: normal;

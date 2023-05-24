@@ -3,77 +3,78 @@ fetch('https://www.coursehubiitg.in/api/codingweek/contributions').then((respons
     return response.json();
 }
 ).then((data)=>{
-    // Tried to sort data but not working so doing it manually
-    // for(let i=0;i<8;i++){
-    //     for(let j=0;j<8-i;j++){
-    //         if(parseInt(data[i].points)>parseInt(data[i+1].points)){
-    //             let temp=data[i];
-    //             data[i]=data[i+1];
-    //             data[i+1]=temp;
-    //         }
-    //     }
-    // }
-    // console.log(data);
+    function getPoints(data){
+        return data.points;
+    }
+    function compare(a,b){
+        let pointsA=getPoints(a);
+        let pointsB=getPoints(b);
+        return pointsB-pointsA;
+    }
+    let sorted=data.sort(compare);
+    console.log(sorted);
+    console.log(sorted.length);
     function displayImage(pic,iden) {
+        let divLocation = document.getElementById(iden).getElementsByClassName("avatar")[0];
+        let imgElement = document.createElement("img");
+        imgElement.src = pic
+        divLocation.append(imgElement);
+    }
+    function displayImage2(pic,iden) {
         let divLocation = document.getElementById(iden);
         let imgElement = document.createElement("img");
         imgElement.src = pic
         divLocation.append(imgElement);
     }
-    ident="image1";
-    displayImage(data[4].avatar,ident);
-    let divName=document.getElementById("nameplate1_text");
-    divName.innerHTML=data[4].name;
-    let divPoints=document.getElementById("nameplate1_points");
-    divPoints.innerHTML=data[4].points;
-    ident="image2";
-    displayImage(data[5].avatar,ident);
-    let divName2=document.getElementById("nameplate2_text");
-    divName2.innerHTML=data[5].name;
-    let divPoints2=document.getElementById("nameplate2_points");
-    divPoints2.innerHTML=data[5].points;
-    ident="image3";
-    displayImage(data[7].avatar,ident);
-    let divName3=document.getElementById("nameplate3_text");
-    divName3.innerHTML=data[7].name;
-    let divPoints3=document.getElementById("nameplate3_points");
-    divPoints3.innerHTML=data[7].points;
-    ident="avatar1";
-    displayImage(data[2].avatar,ident);
-    let divName4=document.getElementById("name1");
-    divName4.innerHTML=data[2].name;
-    let divPoints4=document.getElementById("score1");
-    divPoints4.innerHTML=data[2].points;
-    ident="avatar2";
-    displayImage(data[1].avatar,ident);
-    let divName5=document.getElementById("name2");
-    divName5.innerHTML=data[1].name;
-    let divPoints5=document.getElementById("score2");
-    divPoints5.innerHTML=data[1].points;
-    ident="avatar3";
-    displayImage(data[0].avatar,ident);
-    let divName6=document.getElementById("name3");
-    divName6.innerHTML=data[0].name;
-    let divPoints6=document.getElementById("score3");
-    divPoints6.innerHTML=data[0].points;
-    ident="avatar4";
-    displayImage(data[6].avatar,ident);
-    let divName7=document.getElementById("name4");
-    divName7.innerHTML=data[6].name;
-    let divPoints7=document.getElementById("score4");
-    divPoints7.innerHTML=data[6].points;
-    ident="avatar5";
-    displayImage(data[3].avatar,ident);
-    let divName8=document.getElementById("name5");
-    divName8.innerHTML=data[3].name;
-    let divPoints8=document.getElementById("score5");
-    divPoints8.innerHTML=data[3].points;
-    ident="avatar6";
-    displayImage(data[8].avatar,ident);
-    let divName9=document.getElementById("name6");
-    divName9.innerHTML=data[8].name;
-    let divPoints9=document.getElementById("score6");
-    divPoints9.innerHTML=data[8].points;
-
-}
-)
+    for(let i=0;i<(sorted.length);i++){
+        let ident="standings";
+        let str=(i-2).toString();
+        let identi=ident.concat(str);
+        identi=identi.toString();
+        console.log(identi);
+        if(i<3){
+            let str2=(i+1).toString();
+            let x="image".concat(str2);
+            let y=("nameplate".concat(str2)).concat("_text");
+            let z=("nameplate".concat(str2)).concat("_points");
+            displayImage2(sorted[i].avatar,x);
+              let divName=document.getElementById(y);
+                 divName.innerHTML=sorted[i].name;
+                 let divPoints=document.getElementById(z);
+                 divPoints.innerHTML=sorted[i].points;
+        }
+        else{
+        if((i)<8){
+        displayImage(sorted[i].avatar,identi);
+        let divName=document.getElementById(identi).getElementsByClassName("name")[0];
+        divName.innerHTML=sorted[i].name;
+        let divPoints=document.getElementById(identi).getElementsByClassName("points")[0];
+        divPoints.innerHTML=sorted[i].points;
+        }
+        else{
+            let divElement=document.getElementById('positions');
+            const S1=document.createElement("div")
+            S1.setAttribute("id",identi);
+            divElement.append(S1);
+            document.getElementById(identi).classList.add('standings');
+            let S2=document.getElementById(identi);
+            const S3=document.createElement("div");
+            S3.innerHTML=i+1;
+            S3.setAttribute("class","num");
+            S2.append(S3);
+            const S4=document.createElement("div");
+            S4.setAttribute("class","avatar");
+            S2.append(S4);
+            displayImage(sorted[i].avatar,identi);
+            const S5=document.createElement("div");
+            S5.innerHTML=sorted[i].name;
+            S5.setAttribute("class","name");
+            S2.append(S5);
+            const S6=document.createElement("div");
+            S6.innerHTML=sorted[i].points;
+            S6.setAttribute("class","points");
+            S2.append(S6);
+        }
+    }
+    }
+})
